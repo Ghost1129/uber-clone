@@ -5,6 +5,8 @@ import { FlatList, TouchableOpacity } from 'react-native';
 import { StyleSheet, Text, View } from 'react-native'
 import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
+import "react-native-google-places-autocomplete";
+import {GOOGLE_MAPS_APIKEY} from "@env";
 
 const data = [
     {
