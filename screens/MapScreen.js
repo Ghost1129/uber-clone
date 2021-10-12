@@ -5,6 +5,7 @@ import Map from '../components/Map';
 import { createStackNavigator } from '@react-navigation/stack';
 import RideOptionsCard from '../components/RideOptionsCard'
 import NavigateCard from '../components/NavigateCard'
+import NavFavourites from '../components/NavFavourites';
 
 const MapScreen = () => {
     const Stack = createStackNavigator();
@@ -33,6 +34,7 @@ const MapScreen = () => {
                 </Stack.Navigator>
                 
             </View>
+            <NavFavourites/>
         </View>
         </SafeAreaView>
     )
