@@ -7,6 +7,9 @@ import { Icon } from 'react-native-elements';
 import tw from 'tailwind-react-native-classnames';
 import "react-native-google-places-autocomplete";
 import {GOOGLE_MAPS_APIKEY} from "@env";
+import { selectOrigin } from '../slices/navSlice';
+import { useSelector } from 'react-redux';
+
 
 const data = [
     {
@@ -24,6 +27,7 @@ const data = [
 ];
 
 const NavOptions = () => {
+    const origin = useSelector(selectOrigin);
     const navigation =useNavigation();
     return (
         <FlatList
@@ -32,9 +36,10 @@ const NavOptions = () => {
         keyExtractor={(item)=>item.id.toString()}
         renderItem={({item})=>(
             <TouchableOpacity
+            disabled={!origin}
             onPress={()=>navigation.navigate(item.screen)}
              style={tw`p-2 pl-6 pb-8 pt-4 m-2 w-40 bg-gray-100`}>
-                <View>
+                <View style={tw`${!origin && "opacity-10"}`}>
                     <Image 
                     style={{width:120,height:120,resizeMode:'contain'}}
                     source={{uri: item.image}}
