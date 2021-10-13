@@ -5,7 +5,7 @@ import tw from 'tailwind-react-native-classnames'
 import { setDestination } from '../slices/navSlice'
 import {GOOGLE_MAPS_APIKEY} from "@env";
 import { useDispatch } from 'react-redux'
-import { useNavigation } from '@react-navigation/core'
+import { useNavigation } from '@react-navigation/native'
 
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import NavFavourites from './NavFavourites'
@@ -46,7 +46,7 @@ const NavigateCard = () => {
             </View>
             <View style={tw`flex flex-row justify-evenly py-3 mt-auto  border-t border-gray-100`}>
                 <TouchableOpacity 
-                onPress={() => navigation.push('RideOptionsCard')}
+                onPress={() => navigation.navigate('RideOptionsCard')}
                 style={tw`flex flex-row justify-between bg-black w-24 px-4 py-3 rounded-full border border-black` }>
                 <Icon name="car" type="font-awesome" color="white" size={16} />
                         <Text style={tw`text-white text-center pl-3`}>Ride</Text>
